@@ -593,29 +593,21 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
             <Reveal><div className={tw`font-display text-xs tracking-[0.3em] text-gold uppercase`}>TOTEMPLAY · PITCH ENCERRADO</div></Reveal>
             <Reveal delay={0.1}>
               <h1
-                className={tw`mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl`}
+                className={tw`mt-6 font-display text-7xl font-bold leading-none tracking-tight sm:text-9xl`}
                 style={{ background: 'linear-gradient(120deg,#fff 30%,#a98bff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}
               >
-                A solução está pronta. Hoje.
+                Obrigado.
               </h1>
             </Reveal>
             <Reveal delay={0.25}><div className={tw`mx-auto my-7 h-2.5 w-2.5 rounded-full bg-gold`} style={{ boxShadow: '0 0 20px rgba(233,185,110,.7)' }} /></Reveal>
-            <Reveal delay={0.35}>
-              <div className={tw`mx-auto max-w-xl space-y-4 text-lg leading-relaxed text-muted`}>
-                <p>Não é protótipo nem promessa de roadmap — é um totem operando, do toque na tela ao QR na loja. Instalação em 1 dia: escolhem o corredor, ligamos, está rodando.</p>
-                <p>Quer ver no piloto antes de escalar? Também montamos. Mas a tecnologia já existe e já funciona.</p>
-              </div>
-            </Reveal>
+            <Reveal delay={0.35}><p className={tw`mx-auto max-w-md text-lg text-muted sm:text-xl`}>Agradecemos sua atenção e o tempo dedicado a esta conversa.</p></Reveal>
             <Reveal delay={0.45}>
-              <p className={tw`mt-8 font-display text-2xl font-bold text-gold sm:text-3xl`}>Vamos ligar o primeiro?</p>
-            </Reveal>
-            <Reveal delay={0.55}>
               <div className={tw`mx-auto mt-9 w-full max-w-xs rounded-2xl border border-violet/25 bg-white/[.025] px-6 py-5`}>
                 <div className={tw`font-display text-[0.6rem] tracking-[0.3em] text-violet-bright uppercase`}>Apresentado para</div>
                 <div className={tw`mt-1.5 font-display text-2xl font-bold text-ink`}>Marllon Paiva</div>
               </div>
             </Reveal>
-            <Reveal delay={0.65}>
+            <Reveal delay={0.6}>
               <div className={tw`mt-8`}>
                 <DemoButton onClick={onSeeDemo} label="Ver demonstração da roleta" />
               </div>
