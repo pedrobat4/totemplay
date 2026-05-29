@@ -58,7 +58,7 @@ function Slide({ topL, topR, botR, children }: SlideProps) {
         className={tw`absolute bottom-5 left-5 right-5 hidden items-center justify-between gap-3 font-display text-[0.55rem] tracking-[0.2em] sm:bottom-7 sm:left-16 sm:right-16 sm:flex sm:text-[0.7rem] sm:tracking-[0.32em]`}
       >
         <span className={tw`flex flex-none items-center gap-2 font-semibold text-ink`}>
-          <i className={tw`inline-block h-2 w-2 rotate-45 bg-violet`} /> TOTEMPLAY
+          <i className={tw`inline-block h-2 w-2 rotate-45 bg-violet`} /> SOLUÇÃO METABUY
         </span>
         <span className={tw`hidden text-white/15 sm:inline`}>{botR}</span>
       </div>
@@ -598,7 +598,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
         {/* 13 OBRIGADO */}
         <Slide topL={<><span className={tw`text-violet`}>• ENCERRAMENTO</span> · 13</>} topR="13 · OBRIGADO" botR="13 · OBRIGADO">
           <div className={tw`text-center`}>
-            <Reveal><div className={tw`font-display text-xs tracking-[0.3em] text-gold uppercase`}>TOTEMPLAY · PITCH ENCERRADO</div></Reveal>
+            <Reveal><div className={tw`font-display text-xs tracking-[0.3em] text-gold uppercase`}>SOLUÇÃO METABUY · PITCH ENCERRADO</div></Reveal>
             <Reveal delay={0.1}>
               <h1
                 className={tw`mt-6 font-display text-7xl font-bold leading-none tracking-tight sm:text-9xl`}
