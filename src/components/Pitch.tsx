@@ -337,9 +337,9 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
           <div className={tw`mt-10 grid gap-4 sm:grid-cols-3 lg:grid-cols-5`}>
             {[
               ['01', 'Toca a tela', 'Atraído pelo movimento e pela roleta, o visitante encosta no totem.'],
-              ['02', 'Cadastro rápido', 'Nome, telefone e e-mail em três campos. Validação por SMS.'],
+              ['02', 'Cadastro relâmpago', 'Só nome e telefone. Validação por SMS. Sem fricção, sem desistência.'],
               ['03', 'Escolhe favoritas', 'Seleciona as lojas e categorias que mais lhe interessam.'],
-              ['04', 'Gira a roleta', 'Roleta inteligente: probabilidade enviesada para as lojas favoritas.'],
+              ['04', 'Gira a roleta', 'Roleta inteligente: probabilidade ponderada para as lojas favoritas.'],
               ['05', 'Recebe QR + endereço', 'QR code do prêmio e rota até a loja parceira no celular.'],
             ].map(([n, t, d], i) => (
               <Reveal key={n} delay={0.1 + i * 0.08}>
@@ -361,7 +361,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               <Reveal delay={0.1}><h1 className={tw`font-display text-5xl font-bold leading-tight tracking-tight text-ink`}>Roleta<br />Inteligente.</h1></Reveal>
               <Reveal delay={0.2}>
                 <p className={tw`mt-6 max-w-md text-lg leading-relaxed text-muted`}>
-                  A roleta não é aleatória. Ela ajusta a probabilidade de cada setor com base nas lojas que o cliente marcou como favoritas — e nas metas de tráfego pactuadas com cada lojista.
+                  A roleta não é aleatória. Ela ajusta a probabilidade de cada setor de forma ponderada pelo interesse do cliente — pelas lojas que ele marcou como favoritas e pelas metas de tráfego pactuadas com cada lojista.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
@@ -384,7 +384,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
                   <Wheel rotation={0} favoriteId={1} spinning={false} />
                 </div>
                 <div className={tw`mt-4 flex justify-center gap-6 text-sm text-muted`}>
-                  <span className={tw`inline-flex items-center gap-2`}><i className={tw`h-3 w-3 rounded`} style={{ background: '#e9b96e' }} />Favorita (chance alta)</span>
+                  <span className={tw`inline-flex items-center gap-2`}><i className={tw`h-3 w-3 rounded`} style={{ background: '#e9b96e' }} />Favorita (prioridade)</span>
                   <span className={tw`inline-flex items-center gap-2`}><i className={tw`h-3 w-3 rounded`} style={{ background: '#5b3fd6' }} />Catálogo geral</span>
                 </div>
               </div>
@@ -440,10 +440,10 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
           <Reveal delay={0.1}><h2 className={tw`${heading}`}>Para o Montes Claros Shopping.</h2></Reveal>
           <div className={tw`mt-10 grid gap-4 sm:grid-cols-2`}>
             {[
-              ['01 — Tráfego', 'Mais fluxo nos corredores estratégicos', 'Cada interação dispara um deslocamento intencional até uma loja específica. Tráfego direcionável por hora, dia e região do shopping.'],
-              ['02 — Permanência', 'Tempo de visita ampliado', 'Tempo de visita ampliado pela descoberta gamificada de lojas — métrica acompanhada no piloto.'],
-              ['03 — Dados', 'Base própria de clientes qualificados', 'Cadastro consentido (LGPD), com perfil de interesse por loja, frequência de visita e horários — ativo permanente do shopping.'],
-              ['04 — Receita', 'Nova linha de receita de mídia', 'Espaço publicitário inteligente vendido por impressão qualificada, não por minutagem — margem superior à mídia tradicional.'],
+              ['01 — Tráfego', 'Mais fluxo nos corredores estratégicos', 'Cada interação dispara um deslocamento intencional até uma loja específica. Tráfego direcionável por hora, dia e região do shopping. Estimativa: [___] deslocamentos direcionados/mês.'],
+              ['02 — Permanência', 'Tempo de visita ampliado', 'Tempo de visita ampliado pela descoberta gamificada de lojas — métrica acompanhada no piloto. Meta de +[___] min de permanência média.'],
+              ['03 — Dados', 'Base própria de clientes qualificados', 'Cadastro consentido (LGPD), com perfil de interesse por loja, frequência de visita e horários — ativo permanente do shopping. Projeção de [___] cadastros consentidos/mês.'],
+              ['04 — Receita', 'Nova linha de receita de mídia', 'Espaço publicitário inteligente vendido por impressão qualificada, não por minutagem — margem superior à mídia tradicional. CPM qualificado vs. minutagem tradicional: até [___]x mais eficiente.'],
             ].map(([tag, title, desc], i) => (
               <Reveal key={tag} delay={0.1 + i * 0.08}><InfoCard tag={tag} title={title} desc={desc} /></Reveal>
             ))}
@@ -511,7 +511,10 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               <div className={tw`rounded-2xl border border-violet/50 bg-violet/[.06] p-6`}>
                 <div className={tw`mb-2 font-display text-xs tracking-[0.18em] text-violet-bright`}>01 · OPERADOR</div>
                 <h3 className={tw`text-2xl font-bold text-ink`}>TotemPlay</h3>
-                <p className={tw`mt-2 text-sm text-muted`}>Opera e mantém o totem. CAPEX, OPEX e time são nossos.</p>
+                <p className={tw`mt-2 text-sm text-muted`}>
+                  Opera e mantém o totem.{' '}
+                  <span className={tw`font-bold text-gold`}>CAPEX, OPEX e time são nossos.</span>
+                </p>
               </div>
               <div className={tw`flex flex-col items-center justify-center gap-1 text-xs font-semibold text-violet-bright`}>
                 <span>Mensalidade</span><span className={tw`text-violet`}>→</span><span>Lead</span>
@@ -527,14 +530,14 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               <div className={tw`${cardCls} p-6`}>
                 <div className={tw`mb-2 font-display text-xs tracking-[0.18em] text-gold`}>03 · RECEBE</div>
                 <h3 className={tw`text-2xl font-bold text-ink`}>Shopping</h3>
-                <p className={tw`mt-2 text-sm text-muted`}>Recebe percentual da receita de mídia e a base de dados.</p>
+                <p className={tw`mt-2 text-sm text-muted`}>Recebe [___]% da receita de mídia + a base de dados.</p>
               </div>
             </div>
           </Reveal>
           <Reveal delay={0.35}>
             <div className={tw`mt-6 grid gap-3 sm:grid-cols-3`}>
               {[
-                ['A', '#8b6dff', 'Assinatura do lojista', 'Plano mensal + bônus por lead.'],
+                ['A', '#8b6dff', 'Assinatura do lojista', 'R$ [___]/mês + R$ [___] por lead qualificado.'],
                 ['B', '#8b6dff', 'Mídia dinâmica', 'Inventário entre giros, por impressão qualificada.'],
                 ['C', '#e9b96e', 'Dado anonimizado', 'Insights agregados de fluxo e perfil.'],
               ].map(([l, c, t, d]) => (
@@ -590,21 +593,29 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
             <Reveal><div className={tw`font-display text-xs tracking-[0.3em] text-gold uppercase`}>TOTEMPLAY · PITCH ENCERRADO</div></Reveal>
             <Reveal delay={0.1}>
               <h1
-                className={tw`mt-6 font-display text-7xl font-bold leading-none tracking-tight sm:text-9xl`}
+                className={tw`mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl`}
                 style={{ background: 'linear-gradient(120deg,#fff 30%,#a98bff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}
               >
-                Obrigado.
+                A solução está pronta. Hoje.
               </h1>
             </Reveal>
             <Reveal delay={0.25}><div className={tw`mx-auto my-7 h-2.5 w-2.5 rounded-full bg-gold`} style={{ boxShadow: '0 0 20px rgba(233,185,110,.7)' }} /></Reveal>
-            <Reveal delay={0.35}><p className={tw`mx-auto max-w-md text-lg text-muted sm:text-xl`}>Agradecemos sua atenção e o tempo dedicado a esta conversa.</p></Reveal>
+            <Reveal delay={0.35}>
+              <div className={tw`mx-auto max-w-xl space-y-4 text-lg leading-relaxed text-muted`}>
+                <p>Não é protótipo nem promessa de roadmap — é um totem operando, do toque na tela ao QR na loja. Instalação em 1 dia: escolhem o corredor, ligamos, está rodando.</p>
+                <p>Quer ver no piloto antes de escalar? Também montamos. Mas a tecnologia já existe e já funciona.</p>
+              </div>
+            </Reveal>
             <Reveal delay={0.45}>
+              <p className={tw`mt-8 font-display text-2xl font-bold text-gold sm:text-3xl`}>Vamos ligar o primeiro?</p>
+            </Reveal>
+            <Reveal delay={0.55}>
               <div className={tw`mx-auto mt-9 w-full max-w-xs rounded-2xl border border-violet/25 bg-white/[.025] px-6 py-5`}>
-                <div className={tw`font-display text-[0.6rem] tracking-[0.3em] text-violet-bright uppercase`}>Obrigado pela presença</div>
+                <div className={tw`font-display text-[0.6rem] tracking-[0.3em] text-violet-bright uppercase`}>Apresentado para</div>
                 <div className={tw`mt-1.5 font-display text-2xl font-bold text-ink`}>Marllon Paiva</div>
               </div>
             </Reveal>
-            <Reveal delay={0.6}>
+            <Reveal delay={0.65}>
               <div className={tw`mt-8`}>
                 <DemoButton onClick={onSeeDemo} label="Ver demonstração da roleta" />
               </div>
