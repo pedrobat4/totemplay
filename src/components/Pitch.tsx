@@ -188,6 +188,14 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
           <div className={tw`grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]`}>
             <div>
               <Reveal>
+                <div className={tw`mb-5 flex items-center gap-3`}>
+                  <span className={tw`font-display text-xl font-bold tracking-tight text-ink`}>
+                    meta<span className={tw`text-violet-bright`}>buy</span>
+                  </span>
+                  <span className={tw`font-display text-[0.6rem] tracking-[0.3em] text-faint uppercase`}>apresenta</span>
+                </div>
+              </Reveal>
+              <Reveal delay={0.05}>
                 <span className={tw`inline-flex items-center gap-2 rounded-full border border-violet/35 bg-violet/[.07] px-5 py-2.5 text-sm font-semibold text-violet-bright`}>
                   Apresentação confidencial · 2026
                 </span>
