@@ -253,9 +253,14 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
             </Reveal>
           </div>
 
-          {/* benefícios resumidos na home */}
-          <Reveal delay={0.55}>
-            <div className={tw`mt-12 grid gap-4 sm:grid-cols-2`}>
+        </Slide>
+
+        {/* BENEFÍCIOS (resumo) — slide próprio para não cortar */}
+        <Slide topL={<><span className={tw`text-violet`}>• VISÃO GERAL</span> · BENEFÍCIOS</>} topR="RESUMO" botR="BENEFÍCIOS">
+          <Reveal><div className={tw`${kicker} mb-5`}>Por que instalar</div></Reveal>
+          <Reveal delay={0.1}><h2 className={tw`${heading} max-w-3xl`}>Ganhos diretos para o shopping e para o lojista.</h2></Reveal>
+          <div className={tw`mt-10 grid gap-4 sm:grid-cols-2`}>
+            <Reveal delay={0.2}>
               <BenefitBox
                 title="Para o shopping"
                 color="#8b6dff"
@@ -266,6 +271,8 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
                   ['Receita', 'Nova linha de mídia por impressão qualificada'],
                 ]}
               />
+            </Reveal>
+            <Reveal delay={0.3}>
               <BenefitBox
                 title="Para o lojista"
                 color="#e9b96e"
@@ -276,8 +283,8 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
                   ['Perfil', 'Acesso ao perfil de quem marcou a loja como favorita'],
                 ]}
               />
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </Slide>
 
         {/* 02 PROBLEMA */}
