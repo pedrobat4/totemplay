@@ -440,10 +440,10 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
           <Reveal delay={0.1}><h2 className={tw`${heading}`}>Para o Montes Claros Shopping.</h2></Reveal>
           <div className={tw`mt-10 grid gap-4 sm:grid-cols-2`}>
             {[
-              ['01 — Tráfego', 'Mais fluxo nos corredores estratégicos', 'Cada interação dispara um deslocamento intencional até uma loja específica. Tráfego direcionável por hora, dia e região do shopping. Estimativa: [___] deslocamentos direcionados/mês.'],
-              ['02 — Permanência', 'Tempo de visita ampliado', 'Tempo de visita ampliado pela descoberta gamificada de lojas — métrica acompanhada no piloto. Meta de +[___] min de permanência média.'],
-              ['03 — Dados', 'Base própria de clientes qualificados', 'Cadastro consentido (LGPD), com perfil de interesse por loja, frequência de visita e horários — ativo permanente do shopping. Projeção de [___] cadastros consentidos/mês.'],
-              ['04 — Receita', 'Nova linha de receita de mídia', 'Espaço publicitário inteligente vendido por impressão qualificada, não por minutagem — margem superior à mídia tradicional. CPM qualificado vs. minutagem tradicional: até [___]x mais eficiente.'],
+              ['01 — Tráfego', 'Mais fluxo nos corredores estratégicos', 'Cada interação dispara um deslocamento intencional até uma loja específica. Tráfego direcionável por hora, dia e região do shopping.'],
+              ['02 — Permanência', 'Tempo de visita ampliado', 'Tempo de visita ampliado pela descoberta gamificada de lojas — métrica acompanhada no piloto.'],
+              ['03 — Dados', 'Base própria de clientes qualificados', 'Cadastro consentido (LGPD), com perfil de interesse por loja, frequência de visita e horários — ativo permanente do shopping.'],
+              ['04 — Receita', 'Nova linha de receita de mídia', 'Espaço publicitário inteligente vendido por impressão qualificada, não por minutagem — margem superior à mídia tradicional.'],
             ].map(([tag, title, desc], i) => (
               <Reveal key={tag} delay={0.1 + i * 0.08}><InfoCard tag={tag} title={title} desc={desc} /></Reveal>
             ))}
