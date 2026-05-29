@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { tw } from '../twind'
+import { VIOLET_GRADIENT, CTA_SHADOW } from '../ui'
 
 type Props = {
   children: ReactNode
@@ -26,10 +27,7 @@ export function PrimaryButton({ children, onClick, disabled, variant = 'solid' }
       className={tw`${base} ${styles}`}
       style={
         variant === 'solid'
-          ? {
-              background: 'linear-gradient(120deg, #a98bff, #5b3fd6)',
-              boxShadow: '0 18px 50px rgba(124,92,255,.45)',
-            }
+          ? { background: VIOLET_GRADIENT, boxShadow: CTA_SHADOW }
           : undefined
       }
     >

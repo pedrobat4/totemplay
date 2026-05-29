@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { tw } from '../twind'
 import { Wheel } from './Wheel'
+import { VIOLET_GRADIENT, CTA_SHADOW, cardCls } from '../ui'
 
 /* ---------- helpers ---------- */
 
@@ -71,7 +72,7 @@ const heading = 'font-display text-4xl font-bold leading-[1.04] tracking-tight t
 function InfoCard({ tag, title, desc }: { tag: string; title: string; desc: string }) {
   return (
     <div
-      className={tw`rounded-2xl border border-white/[.07] bg-white/[.025] p-6 transition hover:-translate-y-1 hover:border-violet/40 hover:bg-violet/5`}
+      className={tw`${cardCls} p-6 transition hover:-translate-y-1 hover:border-violet/40 hover:bg-violet/5`}
     >
       <div className={tw`font-bold text-violet-bright`}>{tag}</div>
       <div className={tw`mt-2 text-xl font-bold leading-tight text-ink`}>{title}</div>
@@ -90,7 +91,7 @@ function BenefitBox({
   items: [string, string][]
 }) {
   return (
-    <div className={tw`rounded-2xl border border-white/[.07] bg-white/[.025] p-5`}>
+    <div className={tw`${cardCls} p-5`}>
       <div className={tw`mb-3 flex items-center gap-2.5`}>
         <span className={tw`h-3 w-3 rounded`} style={{ background: color }} />
         <h3 className={tw`font-display text-lg font-bold text-ink`}>{title}</h3>
@@ -116,7 +117,7 @@ function DemoButton({ onClick, label = 'Ver demonstração' }: { onClick: () => 
       whileTap={{ scale: 0.96 }}
       onClick={onClick}
       className={tw`inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 font-display text-base font-bold tracking-wide text-bg`}
-      style={{ background: 'linear-gradient(120deg,#a98bff,#5b3fd6)', boxShadow: '0 18px 50px rgba(124,92,255,.45)' }}
+      style={{ background: VIOLET_GRADIENT, boxShadow: CTA_SHADOW }}
     >
       ▶ {label}
     </motion.button>
@@ -335,7 +336,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               ['05', 'Recebe QR + endereço', 'QR code do prêmio e rota até a loja parceira no celular.'],
             ].map(([n, t, d], i) => (
               <Reveal key={n} delay={0.1 + i * 0.08}>
-                <div className={tw`h-full rounded-2xl border border-white/[.07] bg-white/[.025] p-5`}>
+                <div className={tw`h-full ${cardCls} p-5`}>
                   <div className={tw`font-display text-4xl font-bold text-violet-bright`}>{n}</div>
                   <h3 className={tw`mt-3 font-bold text-ink`}>{t}</h3>
                   <p className={tw`mt-2 text-sm leading-relaxed text-muted`}>{d}</p>
@@ -484,7 +485,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               ['C — Mídia', 'Publicidade segmentada dinâmica', 'Mídia vendida por impressão qualificada — não por minutagem. Margens superiores e métrica clara para o anunciante.'],
             ].map(([tag, title, desc], i) => (
               <Reveal key={tag} delay={0.1 + i * 0.1}>
-                <div className={tw`h-full rounded-2xl border border-white/[.07] bg-white/[.025] p-6`}>
+                <div className={tw`h-full ${cardCls} p-6`}>
                   <div className={tw`text-sm font-semibold text-muted`}>{tag}</div>
                   <h3 className={tw`mt-3 text-lg font-bold text-ink`}>{title}</h3>
                   <p className={tw`mt-3 text-sm leading-relaxed text-muted`}>{desc}</p>
@@ -508,7 +509,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               <div className={tw`flex flex-col items-center justify-center gap-1 text-xs font-semibold text-violet-bright`}>
                 <span>Mensalidade</span><span className={tw`text-violet`}>→</span><span>Lead</span>
               </div>
-              <div className={tw`rounded-2xl border border-white/[.07] bg-white/[.025] p-6`}>
+              <div className={tw`${cardCls} p-6`}>
                 <div className={tw`mb-2 font-display text-xs tracking-[0.18em] text-violet-bright`}>02 · PAGAM</div>
                 <h3 className={tw`text-2xl font-bold text-ink`}>Lojistas</h3>
                 <p className={tw`mt-2 text-sm text-muted`}>Pagam plano fixo + bônus por lead qualificado entregue na loja.</p>
@@ -516,7 +517,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               <div className={tw`flex flex-col items-center justify-center gap-1 text-xs font-semibold text-gold`}>
                 <span>% da mídia</span><span>→</span><span>Base de dados</span>
               </div>
-              <div className={tw`rounded-2xl border border-white/[.07] bg-white/[.025] p-6`}>
+              <div className={tw`${cardCls} p-6`}>
                 <div className={tw`mb-2 font-display text-xs tracking-[0.18em] text-gold`}>03 · RECEBE</div>
                 <h3 className={tw`text-2xl font-bold text-ink`}>Shopping</h3>
                 <p className={tw`mt-2 text-sm text-muted`}>Recebe percentual da receita de mídia e a base de dados.</p>
@@ -530,7 +531,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
                 ['B', '#8b6dff', 'Mídia dinâmica', 'Inventário entre giros, por impressão qualificada.'],
                 ['C', '#e9b96e', 'Dado anonimizado', 'Insights agregados de fluxo e perfil.'],
               ].map(([l, c, t, d]) => (
-                <div key={l} className={tw`flex items-start gap-3 rounded-xl border border-white/[.07] bg-white/[.025] px-4 py-4`}>
+                <div key={l} className={tw`flex items-start gap-3 ${cardCls} rounded-xl px-4 py-4`}>
                   <span className={tw`flex h-8 w-8 flex-none items-center justify-center rounded-lg font-display font-bold text-bg`} style={{ background: c }}>{l}</span>
                   <div><h4 className={tw`font-bold text-ink`}>{t}</h4><p className={tw`mt-0.5 text-xs leading-relaxed text-muted`}>{d}</p></div>
                 </div>
@@ -559,7 +560,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
                 ['04', 'Compartilhamento mínimo', 'Lojista recebe lead apenas de quem escolheu aquela loja como favorita.'],
               ].map(([n, t, d], i) => (
                 <Reveal key={n} delay={0.1 + i * 0.08}>
-                  <div className={tw`h-full rounded-2xl border border-white/[.07] bg-white/[.025] p-5`}>
+                  <div className={tw`h-full ${cardCls} p-5`}>
                     <div className={tw`font-display text-sm font-semibold text-faint`}>{n}</div>
                     <h3 className={tw`mt-2 font-bold text-ink`}>{t}</h3>
                     <p className={tw`mt-2 text-xs leading-relaxed text-muted`}>{d}</p>
@@ -624,7 +625,7 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
         whileTap={{ scale: 0.95 }}
         onClick={onSeeDemo}
         className={tw`fixed bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-full px-6 py-3 font-display text-sm font-bold text-bg lg:left-auto lg:right-5 lg:translate-x-0`}
-        style={{ background: 'linear-gradient(120deg,#a98bff,#5b3fd6)', boxShadow: '0 14px 40px rgba(124,92,255,.5)' }}
+        style={{ background: VIOLET_GRADIENT, boxShadow: CTA_SHADOW }}
       >
         ▶ Ver demonstração
       </motion.button>
