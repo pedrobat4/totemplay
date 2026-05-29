@@ -530,14 +530,14 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
               <div className={tw`${cardCls} p-6`}>
                 <div className={tw`mb-2 font-display text-xs tracking-[0.18em] text-gold`}>03 · RECEBE</div>
                 <h3 className={tw`text-2xl font-bold text-ink`}>Shopping</h3>
-                <p className={tw`mt-2 text-sm text-muted`}>Recebe [___]% da receita de mídia + a base de dados.</p>
+                <p className={tw`mt-2 text-sm text-muted`}>Recebe percentual da receita de mídia + a base de dados.</p>
               </div>
             </div>
           </Reveal>
           <Reveal delay={0.35}>
             <div className={tw`mt-6 grid gap-3 sm:grid-cols-3`}>
               {[
-                ['A', '#8b6dff', 'Assinatura do lojista', 'R$ [___]/mês + R$ [___] por lead qualificado.'],
+                ['A', '#8b6dff', 'Assinatura do lojista', 'Plano mensal + bônus por lead qualificado.'],
                 ['B', '#8b6dff', 'Mídia dinâmica', 'Inventário entre giros, por impressão qualificada.'],
                 ['C', '#e9b96e', 'Dado anonimizado', 'Insights agregados de fluxo e perfil.'],
               ].map(([l, c, t, d]) => (
