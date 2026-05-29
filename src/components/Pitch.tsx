@@ -482,9 +482,9 @@ export function Pitch({ onSeeDemo }: { onSeeDemo: () => void }) {
         </Slide>
 
         {/* 10 ROADMAP */}
-        <Slide topL={<><span className={tw`text-violet`}>• ROADMAP · FASE 2</span> · 10</>} topR="10 · ROADMAP" botR="10 · ROADMAP">
+        <Slide topL={<><span className={tw`text-violet`}>• ROADMAP · MAIS FUNCIONALIDADES</span> · 10</>} topR="10 · ROADMAP" botR="10 · ROADMAP">
           <Reveal><div className={tw`${kicker} mb-5`}>Próximas evoluções</div></Reveal>
-          <Reveal delay={0.1}><h2 className={tw`${heading} max-w-4xl`}>Fase 2 — de canal de captura a plataforma de relacionamento.</h2></Reveal>
+          <Reveal delay={0.1}><h2 className={tw`${heading} max-w-4xl`}>Mais funcionalidades — de canal de captura a plataforma de relacionamento.</h2></Reveal>
           <div className={tw`mt-10 grid gap-4 sm:grid-cols-3`}>
             {[
               ['A — Gatilhos', 'Aniversários e datas comemorativas', 'Campanhas automáticas via SMS e WhatsApp para a base — convites com giro extra na data certa.'],
