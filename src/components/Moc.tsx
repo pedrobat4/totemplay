@@ -192,19 +192,50 @@ export function Moc({ onHome }: { onHome: () => void }) {
 
       <div ref={scrollRef} className={tw`h-screen snap-y snap-mandatory overflow-y-scroll`} style={{ scrollbarWidth: 'none' }}>
         {/* 01 · CAPA */}
-        <Slide topL={<><span style={{ color: MOC.tealBright }}>• PROPOSTA DE MÍDIA</span> · 2026</>} topR="MOC · 01">
-          <div className={tw`max-w-4xl`}>
-            <Reveal><div className={tw`mb-6`}><Logos /></div></Reveal>
-            <Reveal delay={0.05}>
-              <span
-                className={tw`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold`}
-                style={{ border: `1px solid ${MOC.tealBright}55`, background: `${MOC.tealBright}12`, color: MOC.tealBright }}
-              >
-                Mídia digital interativa · {NUM_TOTENS} totens no shopping
-              </span>
+        <section
+          data-slide
+          className={tw`relative flex min-h-screen snap-start flex-col items-center justify-center px-6 py-20 text-center`}
+          style={{
+            background:
+              'radial-gradient(95% 70% at 50% -5%, rgba(22,195,181,.20), transparent 60%),' +
+              'radial-gradient(80% 60% at 12% 112%, rgba(140,198,63,.16), transparent 55%),' +
+              'radial-gradient(72% 60% at 92% 108%, rgba(246,199,0,.12), transparent 55%),' +
+              'linear-gradient(160deg,#06100e 0%,#0a1714 55%,#050d0b 100%)',
+          }}
+        >
+          {/* faixa de brilho da marca no topo */}
+          <div className={tw`pointer-events-none absolute inset-x-0 top-0 h-1`} style={{ background: MOC.gradient }} />
+          {/* textura de pontos */}
+          <div
+            className={tw`pointer-events-none absolute inset-0 opacity-30`}
+            style={{
+              backgroundImage: 'radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px)',
+              backgroundSize: '34px 34px',
+              maskImage: 'radial-gradient(120% 80% at 50% 40%,#000,transparent)',
+              WebkitMaskImage: 'radial-gradient(120% 80% at 50% 40%,#000,transparent)',
+            }}
+          />
+
+          <div className={tw`relative z-[2] flex flex-col items-center`}>
+            {/* logos grandes — a capa */}
+            <Reveal>
+              <div className={tw`flex flex-col items-center gap-5 sm:flex-row sm:gap-8`}>
+                <span className={tw`flex items-center rounded-2xl bg-white px-6 py-4 shadow-2xl`}>
+                  <img src="/brands/montes-claros-shopping.webp" alt="Montes Claros Shopping" className={tw`h-12 w-auto sm:h-16`} />
+                </span>
+                <span className={tw`font-display text-3xl font-light`} style={{ color: 'rgba(255,255,255,.25)' }}>×</span>
+                <img src="/brands/metabuy.png" alt="Metabuy" className={tw`h-9 w-auto opacity-95 sm:h-11`} />
+              </div>
             </Reveal>
-            <Reveal delay={0.1}>
-              <h1 className={tw`mt-7 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl`} style={{ color: INK }}>
+
+            <Reveal delay={0.15}>
+              <div className={tw`mt-12 font-display text-xs uppercase tracking-[0.42em]`} style={{ color: MOC.tealBright }}>
+                Proposta de mídia · 2026
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.25}>
+              <h1 className={tw`mt-5 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl`} style={{ color: INK }}>
                 Uma nova mídia
                 <br />
                 <span style={{ background: MOC.gradient, WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
@@ -212,21 +243,35 @@ export function Moc({ onHome }: { onHome: () => void }) {
                 </span>
               </h1>
             </Reveal>
-            <Reveal delay={0.2}>
-              <p className={tw`mt-6 max-w-2xl text-xl leading-snug`} style={{ color: MUTED }}>
-                Totens digitais que <span style={{ color: INK }} className={tw`font-semibold`}>vendem mídia, captam leads e dão prêmios</span> —
-                gerando uma nova receita para o shopping, <span style={{ color: INK }} className={tw`font-semibold`}>sem nenhum investimento</span>.
+
+            <Reveal delay={0.4}>
+              <p className={tw`mx-auto mt-6 max-w-2xl text-lg leading-snug sm:text-xl`} style={{ color: MUTED }}>
+                {NUM_TOTENS} totens digitais interativos que <span style={{ color: INK }} className={tw`font-semibold`}>vendem mídia, captam leads e dão prêmios</span> —
+                nova receita para o shopping, <span style={{ color: INK }} className={tw`font-semibold`}>sem nenhum investimento</span>.
               </p>
             </Reveal>
-            <Reveal delay={0.35}>
-              <div className={tw`mt-9 grid gap-3 sm:grid-cols-3`}>
-                <Stat value={`${Math.round(AUDIENCIA.publicoMes / 1000)} mil`} label="Público médio/mês no shopping (Book 2026)" />
-                <Stat value={brl(GANHO_BASE.ano)} gold label="Receita estimada/ano para o shopping (50%)" />
-                <Stat value="R$ 0" label="Investimento do shopping — risco zero" />
+
+            <Reveal delay={0.55}>
+              <div className={tw`mt-9 flex flex-wrap items-center justify-center gap-3`}>
+                {([
+                  [`${Math.round(AUDIENCIA.publicoMes / 1000)} mil`, 'público/mês', false],
+                  [brl(GANHO_BASE.ano), 'p/ o shopping/ano (50%)', true],
+                  ['R$ 0', 'investimento', false],
+                ] as [string, string, boolean][]).map(([v, l, gold]) => (
+                  <div key={l} className={tw`rounded-2xl border border-white/[.08] bg-white/[.03] px-5 py-3`}>
+                    <div className={tw`font-display text-xl font-bold`} style={{ color: gold ? MOC.amarelo : MOC.tealBright }}>{v}</div>
+                    <div className={tw`mt-0.5 text-xs`} style={{ color: MUTED }}>{l}</div>
+                  </div>
+                ))}
               </div>
             </Reveal>
           </div>
-        </Slide>
+
+          {/* hint de scroll */}
+          <div className={tw`absolute bottom-8 left-1/2 -translate-x-1/2 font-display text-[0.6rem] uppercase tracking-[0.3em]`} style={{ color: FAINT }}>
+            role para ver a proposta ↓
+          </div>
+        </section>
 
         {/* 02 · OPORTUNIDADE */}
         <Slide topL={<><span style={{ color: MOC.tealBright }}>• A OPORTUNIDADE</span> · 02</>} topR="MOC · 02">
