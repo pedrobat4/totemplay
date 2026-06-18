@@ -250,21 +250,6 @@ export function Moc({ onHome }: { onHome: () => void }) {
                 nova receita para o shopping, <span style={{ color: INK }} className={tw`font-semibold`}>sem nenhum investimento</span>.
               </p>
             </Reveal>
-
-            <Reveal delay={0.55}>
-              <div className={tw`mt-9 flex flex-wrap items-center justify-center gap-3`}>
-                {([
-                  [`${Math.round(AUDIENCIA.publicoMes / 1000)} mil`, 'público/mês', false],
-                  [brl(GANHO_BASE.ano), 'p/ o shopping/ano (50%)', true],
-                  ['R$ 0', 'investimento', false],
-                ] as [string, string, boolean][]).map(([v, l, gold]) => (
-                  <div key={l} className={tw`rounded-2xl border border-white/[.08] bg-white/[.03] px-5 py-3`}>
-                    <div className={tw`font-display text-xl font-bold`} style={{ color: gold ? MOC.amarelo : MOC.tealBright }}>{v}</div>
-                    <div className={tw`mt-0.5 text-xs`} style={{ color: MUTED }}>{l}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
           </div>
 
           {/* hint de scroll */}
