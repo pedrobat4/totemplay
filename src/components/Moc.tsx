@@ -11,7 +11,6 @@ import {
   SEGUNDOS_POR_ANUNCIO,
   MIDIA,
   PACOTES,
-  BOOK_REF,
   NOSSO_TOTEM_PRECO,
   SPLIT_SHOPPING,
   PARCERIA,
@@ -24,7 +23,6 @@ import {
   GANHO_CHEIO,
   ANUNCIANTES_CHEIO,
   RAMPA_ANO_SHOPPING,
-  CONTATOS,
   APRESENTADO_PARA,
   PROPOSTO_POR,
 } from '../moc-data'
@@ -292,8 +290,56 @@ export function Moc({ onHome }: { onHome: () => void }) {
           </div>
         </Slide>
 
-        {/* 05 · OS 4 TOTENS */}
-        <Slide topL={<><span style={{ color: MOC.tealBright }}>• A PROPOSTA · {NUM_TOTENS} TOTENS</span> · 05</>} topR="MOC · 05">
+        {/* 05 · O DIFERENCIAL */}
+        <Slide topL={<><span style={{ color: MOC.tealBright }}>• O DIFERENCIAL</span> · 05</>} topR="MOC · 05">
+          <Reveal><div className={tw`${kicker} mb-5`} style={{ color: MOC.tealBright }}>Por que ganhamos do concorrente</div></Reveal>
+          <Reveal delay={0.1}><H2>Não é uma TV passando anúncio.</H2></Reveal>
+          <Reveal delay={0.18}>
+            <p className={tw`mt-4 max-w-3xl text-lg leading-relaxed`} style={{ color: MUTED }}>
+              O totem comum só roda vídeo em loop — o cliente passa e ignora, igual a qualquer tela. O nosso{' '}
+              <span style={{ color: INK }} className={tw`font-semibold`}>chama, diverte, dá prêmio e capta o lead</span>. Vira atração, não decoração.
+            </p>
+          </Reveal>
+          <div className={tw`mt-9 grid gap-4 lg:grid-cols-2`}>
+            <Reveal delay={0.24}>
+              <div className={tw`h-full rounded-2xl border border-white/[.07] bg-white/[.02] p-7`}>
+                <div className={tw`font-display text-sm uppercase tracking-[0.2em]`} style={{ color: FAINT }}>Totem comum (o concorrente)</div>
+                <div className={tw`mt-1 text-xs`} style={{ color: FAINT }}>uma TV rodando propaganda</div>
+                <ul className={tw`mt-4 flex flex-col gap-3 text-sm`}>
+                  {['Só passa vídeo em loop', 'Ninguém para — o cliente ignora', 'Não sabe quem viu nem quantos', 'Zero interação e zero dado', 'Não traz ninguém pra dentro da loja'].map((t) => (
+                    <li key={t} className={tw`flex items-start gap-3`} style={{ color: MUTED }}>
+                      <span className={tw`flex-none font-bold`} style={{ color: '#e5705e' }}>✕</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+            <Reveal delay={0.32}>
+              <div className={tw`h-full rounded-2xl p-7`} style={{ border: `1px solid ${MOC.tealBright}59`, background: `${MOC.tealBright}0d` }}>
+                <div className={tw`font-display text-sm uppercase tracking-[0.2em]`} style={{ color: MOC.tealBright }}>Nosso totem</div>
+                <div className={tw`mt-1 text-xs`} style={{ color: MUTED }}>mídia + interação + dado + ativação</div>
+                <ul className={tw`mt-4 flex flex-col gap-3 text-sm`}>
+                  {['Cliente toca, joga e ganha prêmio das lojas', 'Vira atração — gera fila e burburinho', 'Capta nome e WhatsApp na hora', 'Relatórios: quem viu e quantos leads', 'Leva o cliente pra dentro das lojas'].map((t) => (
+                    <li key={t} className={tw`flex items-start gap-3`} style={{ color: INK }}>
+                      <span className={tw`flex-none font-bold`} style={{ color: MOC.lima }}>✓</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+          <Reveal delay={0.46}>
+            <p className={tw`mt-7 max-w-3xl text-sm leading-relaxed`} style={{ color: MUTED }}>
+              Qualquer um instala uma tela. O que vende a marca — e o que justifica o investimento — é o{' '}
+              <span style={{ color: INK }} className={tw`font-semibold`}>engajamento e o lead</span>. É aí que ganhamos.
+            </p>
+          </Reveal>
+        </Slide>
+
+        {/* 06 · OS 4 TOTENS */}
+        <Slide topL={<><span style={{ color: MOC.tealBright }}>• A PROPOSTA · {NUM_TOTENS} TOTENS</span> · 06</>} topR="MOC · 06">
           <Reveal><div className={tw`${kicker} mb-5`} style={{ color: MOC.tealBright }}>Onde entram os totens</div></Reveal>
           <Reveal delay={0.1}><H2>{NUM_TOTENS} totens nos corredores de maior fluxo.</H2></Reveal>
           <div className={tw`mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4`}>
@@ -315,8 +361,8 @@ export function Moc({ onHome }: { onHome: () => void }) {
           </Reveal>
         </Slide>
 
-        {/* 06 · A MÍDIA / IMPRESSÕES */}
-        <Slide topL={<><span style={{ color: MOC.tealBright }}>• A MÍDIA · IMPRESSÕES</span> · 06</>} topR="MOC · 06">
+        {/* 07 · A MÍDIA / IMPRESSÕES */}
+        <Slide topL={<><span style={{ color: MOC.tealBright }}>• A MÍDIA · IMPRESSÕES</span> · 07</>} topR="MOC · 07">
           <Reveal><div className={tw`${kicker} mb-5`} style={{ color: MOC.tealBright }}>Como o anunciante aparece</div></Reveal>
           <Reveal delay={0.1}><H2>{LOOP_SLOTS} anúncios em loop, das 10h às 22h.</H2></Reveal>
           <div className={tw`mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4`}>
@@ -334,8 +380,8 @@ export function Moc({ onHome }: { onHome: () => void }) {
           </Reveal>
         </Slide>
 
-        {/* 07 · PLANOS DO ANUNCIANTE */}
-        <Slide topL={<><span style={{ color: MOC.tealBright }}>• PLANOS · ANUNCIANTE</span> · 07</>} topR="MOC · 07">
+        {/* 08 · PLANOS DO ANUNCIANTE */}
+        <Slide topL={<><span style={{ color: MOC.tealBright }}>• PLANOS · ANUNCIANTE</span> · 08</>} topR="MOC · 08">
           <Reveal><div className={tw`${kicker} mb-5`} style={{ color: MOC.tealBright }}>O que vendemos para as marcas</div></Reveal>
           <Reveal delay={0.1}><H2>Planos por número de totens.</H2></Reveal>
           <div className={tw`mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4`}>
@@ -375,48 +421,6 @@ export function Moc({ onHome }: { onHome: () => void }) {
               <span style={{ color: MOC.amarelo }} className={tw`font-semibold`}>Rede MOC</span> aparece nos {NUM_TOTENS} totens pelo melhor custo por ponto.
             </p>
           </Reveal>
-        </Slide>
-
-        {/* 08 · COMPARATIVO COM O BOOK (o estudo) */}
-        <Slide topL={<><span style={{ color: MOC.tealBright }}>• PREÇO · VS. O BOOK</span> · 08</>} topR="MOC · 08">
-          <Reveal><div className={tw`${kicker} mb-5`} style={{ color: MOC.tealBright }}>Coerente com a tabela do shopping</div></Reveal>
-          <Reveal delay={0.1}><H2>O preço cabe no Book — com dado e interação a mais.</H2></Reveal>
-          <div className={tw`mt-9 grid items-start gap-8 lg:grid-cols-[1.3fr_0.7fr]`}>
-            <Reveal delay={0.2}>
-              <div className={tw`${cardCls} overflow-hidden`}>
-                <div className={tw`bg-white/[.03] px-5 py-2.5 font-display text-xs tracking-[0.2em]`} style={{ color: MOC.tealBright }}>FORMATOS DO BOOK DE MÍDIA 2026</div>
-                {BOOK_REF.map((b, i) => (
-                  <div key={b.item} className={tw`flex items-center justify-between gap-4 px-5 py-3 ${i > 0 ? 'border-t border-white/[.06]' : ''}`}>
-                    <div>
-                      <div className={tw`font-semibold`} style={{ color: INK }}>{b.item}</div>
-                      <div className={tw`text-xs`} style={{ color: FAINT }}>{b.obs}</div>
-                    </div>
-                    <div className={tw`flex-none font-display font-bold`} style={{ color: INK }}>{brl(b.preco)}</div>
-                  </div>
-                ))}
-                <div className={tw`flex items-center justify-between gap-4 px-5 py-4`} style={{ borderTop: `1px solid ${MOC.amarelo}4d`, background: `${MOC.amarelo}12` }}>
-                  <div>
-                    <div className={tw`font-display font-bold uppercase tracking-wide`} style={{ color: MOC.amarelo }}>Totem digital (nosso) — entrada</div>
-                    <div className={tw`text-xs`} style={{ color: MUTED }}>Vídeo + toque + captação de leads + roleta</div>
-                  </div>
-                  <div className={tw`flex-none font-display text-2xl font-bold`} style={{ color: INK }}>{brl(NOSSO_TOTEM_PRECO)}</div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className={tw`flex flex-col gap-3`}>
-                <div className={tw`rounded-xl p-4 text-sm leading-relaxed`} style={{ border: `1px solid ${MOC.tealBright}40`, background: `${MOC.tealBright}0d`, color: MUTED }}>
-                  O <span style={{ color: INK }} className={tw`font-semibold`}>totem estático</span> do Book custa {brl(2000)} o par —
-                  só adesivo, sem tela e sem dado. O nosso, digital e interativo, entra a {brl(NOSSO_TOTEM_PRECO)} e ainda{' '}
-                  <span style={{ color: INK }} className={tw`font-semibold`}>captura o lead do cliente</span>.
-                </div>
-                <div className={tw`rounded-xl p-4 text-sm leading-relaxed`} style={{ border: `1px solid ${MOC.amarelo}40`, background: `${MOC.amarelo}0d`, color: MUTED }}>
-                  Resultado: um preço fácil de vender (abaixo de mega banner, front light e elevador), mas com um produto
-                  muito mais valioso — e <span style={{ color: MOC.amarelo }} className={tw`font-semibold`}>recorrente todo mês</span>.
-                </div>
-              </div>
-            </Reveal>
-          </div>
         </Slide>
 
         {/* 09 · QUANTO O SHOPPING GANHA */}
@@ -518,9 +522,6 @@ export function Moc({ onHome }: { onHome: () => void }) {
                 <div className={tw`mt-1 font-display text-xl font-bold`} style={{ color: INK }}>{APRESENTADO_PARA}</div>
                 <div className={tw`mt-3 border-t border-white/10 pt-3 font-display text-[0.6rem] tracking-[0.3em] uppercase`} style={{ color: MOC.amarelo }}>Proposto por</div>
                 <div className={tw`mt-1 text-sm font-semibold`} style={{ color: MUTED }}>{PROPOSTO_POR}</div>
-                <div className={tw`mt-3 border-t border-white/10 pt-3 text-xs`} style={{ color: FAINT }}>
-                  {CONTATOS.map((c) => `${c.nome} · ${c.tel}`).join('   ·   ')}
-                </div>
               </div>
             </Reveal>
             <Reveal delay={0.55}>

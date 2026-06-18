@@ -63,11 +63,14 @@ export const MIDIA = (() => {
 // Posicionamento: a mídia mais barata do Book com DADO + INTERAÇÃO embutidos.
 // (O "totem estático" do shopping custa R$ 2 mil o par e é só adesivo, sem
 //  tela, sem captação. O nosso é digital, interativo e gera leads.)
+// Entrada a R$ 2.500/totem — ACIMA do totem estático (R$ 2 mil, só adesivo),
+// porque o nosso é digital, interativo e capta leads. Desconto por volume:
+// quanto mais totens, menor o preço por ponto (a Rede MOC fica abaixo do estático).
 export const PACOTES: { telas: number; nome: string; preco: number; cheio: number; destaque?: boolean }[] = [
-  { telas: 1, nome: 'Presença', preco: 1_490, cheio: 1_490 },
-  { telas: 2, nome: 'Dupla', preco: 2_590, cheio: 2_980 },
-  { telas: 3, nome: 'Trio', preco: 3_490, cheio: 4_470 },
-  { telas: 4, nome: 'Rede MOC', preco: 4_290, cheio: 5_960, destaque: true },
+  { telas: 1, nome: 'Presença', preco: 2_500, cheio: 2_500 },
+  { telas: 2, nome: 'Dupla', preco: 4_500, cheio: 5_000 },
+  { telas: 3, nome: 'Trio', preco: 6_300, cheio: 7_500 },
+  { telas: 4, nome: 'Rede MOC', preco: 7_800, cheio: 10_000, destaque: true },
 ]
 
 // ── Referências do Book de Mídia 2026 (para situar o preço do totem) ────────
@@ -120,8 +123,8 @@ export const SLOTS_USADOS = MIX_BASE.reduce((s, m) => s + m.telas * m.qtd, 0) //
 export const OCUPACAO_BASE = SLOTS_USADOS / MIDIA.slotsRede // ~55%
 
 // Cenário cheio: rede mais ocupada, mesmo preço.
-export const ANUNCIANTES_CHEIO = 34
-export const BRUTO_CHEIO = Math.round(TICKET_MEDIO * ANUNCIANTES_CHEIO) // ~70.890
+export const ANUNCIANTES_CHEIO = 30
+export const BRUTO_CHEIO = Math.round(TICKET_MEDIO * ANUNCIANTES_CHEIO)
 
 export function ganhoShopping(bruto: number) {
   const shopping = bruto * SPLIT_SHOPPING
