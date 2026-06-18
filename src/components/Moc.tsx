@@ -292,18 +292,18 @@ export function Moc({ onHome }: { onHome: () => void }) {
 
         {/* 05 · O DIFERENCIAL */}
         <Slide topL={<><span style={{ color: MOC.tealBright }}>• O DIFERENCIAL</span> · 05</>} topR="MOC · 05">
-          <Reveal><div className={tw`${kicker} mb-5`} style={{ color: MOC.tealBright }}>Por que ganhamos do concorrente</div></Reveal>
+          <Reveal><div className={tw`${kicker} mb-5`} style={{ color: MOC.tealBright }}>Totem convencional × o nosso</div></Reveal>
           <Reveal delay={0.1}><H2>Não é uma TV passando anúncio.</H2></Reveal>
           <Reveal delay={0.18}>
             <p className={tw`mt-4 max-w-3xl text-lg leading-relaxed`} style={{ color: MUTED }}>
-              O totem comum só roda vídeo em loop — o cliente passa e ignora, igual a qualquer tela. O nosso{' '}
+              O totem convencional só roda vídeo em loop — o cliente passa e ignora, igual a qualquer tela. O nosso{' '}
               <span style={{ color: INK }} className={tw`font-semibold`}>chama, diverte, dá prêmio e capta o lead</span>. Vira atração, não decoração.
             </p>
           </Reveal>
           <div className={tw`mt-9 grid gap-4 lg:grid-cols-2`}>
             <Reveal delay={0.24}>
               <div className={tw`h-full rounded-2xl border border-white/[.07] bg-white/[.02] p-7`}>
-                <div className={tw`font-display text-sm uppercase tracking-[0.2em]`} style={{ color: FAINT }}>Totem comum (o concorrente)</div>
+                <div className={tw`font-display text-sm uppercase tracking-[0.2em]`} style={{ color: FAINT }}>Totem convencional</div>
                 <div className={tw`mt-1 text-xs`} style={{ color: FAINT }}>uma TV rodando propaganda</div>
                 <ul className={tw`mt-4 flex flex-col gap-3 text-sm`}>
                   {['Só passa vídeo em loop', 'Ninguém para — o cliente ignora', 'Não sabe quem viu nem quantos', 'Zero interação e zero dado', 'Não traz ninguém pra dentro da loja'].map((t) => (
@@ -333,7 +333,7 @@ export function Moc({ onHome }: { onHome: () => void }) {
           <Reveal delay={0.46}>
             <p className={tw`mt-7 max-w-3xl text-sm leading-relaxed`} style={{ color: MUTED }}>
               Qualquer um instala uma tela. O que vende a marca — e o que justifica o investimento — é o{' '}
-              <span style={{ color: INK }} className={tw`font-semibold`}>engajamento e o lead</span>. É aí que ganhamos.
+              <span style={{ color: INK }} className={tw`font-semibold`}>engajamento e o lead</span>. É aí que está a diferença.
             </p>
           </Reveal>
         </Slide>
