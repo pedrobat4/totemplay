@@ -26,20 +26,20 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
     <LojistaShell page={1} onApresentacao={onApresentacao} onExemplo={onExemplo}>
       {/* HERO */}
       <section className={tw`${section} pt-14 sm:pt-20`}>
-        <div className={tw`grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]`}>
+        <Reveal>
+          <div className={tw`${kickerCls}`}>Montes Claros Shopping · Para lojistas</div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h1 className={tw`mt-6 max-w-5xl font-anton text-5xl uppercase leading-[0.98] text-mb-black sm:text-6xl lg:text-7xl xl:text-8xl`}>
+            Sua marca no caminho
+            <br className={tw`hidden lg:block`} />{' '}
+            de quem <span className={tw`text-mb-blue`}>já veio comprar.</span>
+          </h1>
+        </Reveal>
+        <div className={tw`mt-10 grid items-center gap-12 lg:mt-12 lg:grid-cols-[1.15fr_0.85fr]`}>
           <div>
-            <Reveal>
-              <div className={tw`${kickerCls}`}>Montes Claros Shopping · Para lojistas</div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h1 className={tw`mt-6 font-anton text-6xl uppercase leading-[0.96] text-mb-black sm:text-8xl`}>
-                Sua loja na roleta.
-                <br />
-                <span className={tw`text-mb-blue`}>Cliente na porta.</span>
-              </h1>
-            </Reveal>
             <Reveal delay={0.2}>
-              <p className={tw`mt-6 max-w-lg text-lg leading-relaxed text-mb-surface sm:text-xl`}>
+              <p className={tw`max-w-lg text-lg leading-relaxed text-mb-surface sm:text-xl`}>
                 O TotemPlay é um totem de 60 polegadas, 4K e touch, em corredor estratégico do
                 shopping. O visitante gira a roleta e ganha um prêmio da sua loja. Para retirar, só
                 entrando nela.
@@ -101,9 +101,7 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
           </Reveal>
           <Reveal delay={0.1}>
             <p className={tw`mx-auto font-anton text-4xl uppercase leading-[1.05] text-mb-black sm:text-6xl`}>
-              Sua marca no caminho
-              <br />
-              de quem <span className={tw`text-mb-blue`}>já veio comprar.</span>
+              Sua loja na roleta. <span className={tw`text-mb-blue`}>Cliente na porta.</span>
             </p>
           </Reveal>
           <Reveal delay={0.25}>
