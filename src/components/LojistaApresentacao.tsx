@@ -1,17 +1,16 @@
 import { tw } from '../twind'
-import { Wheel } from './Wheel'
-import { cardCls } from '../ui'
+import { WheelClean } from './WheelClean'
 import { PRIZE_PERCENT } from '../data'
-import { CtaButton, LojistaShell, Reveal, headingCls, kickerCls } from './LojistaShell'
+import { CtaButton, LojistaShell, Reveal, cardCls, headingCls, kickerCls } from './LojistaShell'
 
 const section = 'mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24'
 
 function InfoCard({ tag, title, desc }: { tag: string; title: string; desc: string }) {
   return (
-    <div className={tw`h-full ${cardCls} p-6 transition hover:-translate-y-1 hover:border-violet/40 hover:bg-violet/5`}>
-      <div className={tw`font-bold text-violet-bright`}>{tag}</div>
-      <div className={tw`mt-2 text-xl font-bold leading-tight text-ink`}>{title}</div>
-      <p className={tw`mt-3 text-sm leading-relaxed text-muted`}>{desc}</p>
+    <div className={tw`h-full ${cardCls} p-6 transition hover:-translate-y-1 hover:border-mb-blue/50`}>
+      <div className={tw`font-mono text-[0.65rem] font-semibold tracking-[0.22em] text-mb-blue`}>{tag}</div>
+      <div className={tw`mt-3 text-xl font-extrabold leading-tight text-mb-black`}>{title}</div>
+      <p className={tw`mt-3 text-sm leading-relaxed text-mb-gray`}>{desc}</p>
     </div>
   )
 }
@@ -30,39 +29,28 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
         <div className={tw`grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]`}>
           <div>
             <Reveal>
-              <span className={tw`inline-flex items-center gap-2 rounded-full border border-violet/35 bg-violet/[.07] px-5 py-2.5 text-sm font-semibold text-violet-bright`}>
-                Montes Claros Shopping · Apresentação para lojistas
-              </span>
+              <div className={tw`${kickerCls}`}>Montes Claros Shopping · Para lojistas</div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className={tw`mt-7 font-display text-5xl font-bold leading-[0.98] tracking-tight text-ink sm:text-7xl`}>
+              <h1 className={tw`mt-6 font-anton text-6xl uppercase leading-[0.96] text-mb-black sm:text-8xl`}>
                 Sua loja na roleta.
                 <br />
-                <span
-                  style={{
-                    background: 'linear-gradient(120deg,#a98bff,#5b3fd6)',
-                    WebkitBackgroundClip: 'text',
-                    backgroundClip: 'text',
-                    color: 'transparent',
-                  }}
-                >
-                  Cliente na sua porta.
-                </span>
+                <span className={tw`text-mb-blue`}>Cliente na porta.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className={tw`mt-6 max-w-lg text-xl leading-snug text-muted`}>
-                O TotemPlay é um totem de 60 polegadas, 4K e touch, instalado em corredor estratégico
-                do shopping. O visitante gira a roleta, ganha um prêmio da sua loja — e só retira o
-                prêmio entrando nela.
+              <p className={tw`mt-6 max-w-lg text-lg leading-relaxed text-mb-surface sm:text-xl`}>
+                O TotemPlay é um totem de 60 polegadas, 4K e touch, em corredor estratégico do
+                shopping. O visitante gira a roleta e ganha um prêmio da sua loja. Para retirar, só
+                entrando nela.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
               <div className={tw`mt-7 flex flex-wrap gap-3`}>
-                <span className={tw`rounded-full border border-gold/40 bg-gold/[.06] px-5 py-2.5 text-sm font-semibold text-gold`}>
+                <span className={tw`rounded-full border border-mb-blue/30 bg-mb-blue/[.06] px-5 py-2.5 text-sm font-bold text-mb-blue`}>
                   Lead com nome e telefone
                 </span>
-                <span className={tw`rounded-full border border-violet/30 bg-violet/[.06] px-5 py-2.5 text-sm font-semibold text-violet-bright`}>
+                <span className={tw`rounded-full border border-black/15 bg-white px-5 py-2.5 text-sm font-bold text-mb-black`}>
                   Prêmio retirado dentro da loja
                 </span>
               </div>
@@ -79,24 +67,27 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
 
           {/* totem mockup */}
           <Reveal delay={0.2}>
-            <div className={tw`flex flex-col items-center`} style={{ filter: 'drop-shadow(0 40px 80px rgba(91,63,214,.35))' }}>
-              <div className={tw`w-[300px] max-w-full rounded-[30px] border-[3px] border-[#1b1730] bg-[#07060f] px-6 pb-6 pt-6`}>
-                <div className={tw`text-center font-display text-lg font-bold tracking-wide text-ink`}>GIRE E GANHE</div>
-                <div className={tw`mb-3 text-center text-xs text-faint`}>Toque para começar</div>
-                <div className={tw`flex justify-center`}>
-                  <Wheel rotation={0} favoriteId={1} spinning={false} idle size={196} />
+            <div className={tw`flex flex-col items-center`}>
+              <div
+                className={tw`w-[300px] max-w-full rounded-[30px] bg-mb-black px-6 pb-6 pt-7`}
+                style={{ boxShadow: '0 40px 80px rgba(11,12,15,.28)' }}
+              >
+                <div className={tw`text-center font-anton text-2xl uppercase tracking-wide text-white`}>Gire e ganhe</div>
+                <div className={tw`mb-4 text-center font-mono text-[0.6rem] tracking-[0.24em] text-mb-gray`}>
+                  TOQUE PARA COMEÇAR
                 </div>
-                <div className={tw`mt-4 rounded-xl border border-violet/35 bg-violet/[.05] px-4 py-3`}>
-                  <div className={tw`font-display text-[0.6rem] tracking-[0.22em] text-violet-bright`}>PRÊMIO</div>
-                  <div className={tw`text-sm font-bold text-ink`}>{PRIZE_PERCENT}% OFF · Sua loja</div>
+                <WheelClean size={200} idle />
+                <div className={tw`mt-5 rounded-xl border border-white/15 px-4 py-3`}>
+                  <div className={tw`font-mono text-[0.6rem] tracking-[0.22em] text-mb-sky`}>PRÊMIO</div>
+                  <div className={tw`text-sm font-bold text-white`}>{PRIZE_PERCENT}% OFF · Sua loja</div>
                 </div>
-                <div className={tw`mt-2 rounded-xl border border-gold/35 bg-gold/[.05] px-4 py-3`}>
-                  <div className={tw`font-display text-[0.6rem] tracking-[0.22em] text-gold`}>QR CODE</div>
-                  <div className={tw`text-sm font-bold text-ink`}>Retirada na sua loja</div>
+                <div className={tw`mt-2 rounded-xl border border-white/15 px-4 py-3`}>
+                  <div className={tw`font-mono text-[0.6rem] tracking-[0.22em] text-mb-sky`}>QR CODE</div>
+                  <div className={tw`text-sm font-bold text-white`}>Retirada na sua loja</div>
                 </div>
               </div>
-              <div className={tw`h-4 w-[62%] rounded-b-lg bg-[#0d0b18]`} />
-              <div className={tw`mt-2 h-6 w-[40%] rounded-lg bg-[#070610]`} style={{ boxShadow: '0 30px 40px rgba(0,0,0,.6)' }} />
+              <div className={tw`h-4 w-[62%] rounded-b-lg bg-mb-surface`} />
+              <div className={tw`mt-2 h-6 w-[40%] rounded-lg bg-mb-black`} style={{ boxShadow: '0 26px 34px rgba(11,12,15,.3)' }} />
             </div>
           </Reveal>
         </div>
@@ -112,17 +103,17 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
         </Reveal>
         <div className={tw`mt-10 grid gap-4 sm:grid-cols-3 lg:grid-cols-5`}>
           {[
-            ['01', 'Cliente toca a tela', 'Atraído pelo movimento da roleta em 4K, o visitante do shopping encosta no totem.'],
+            ['01', 'Cliente toca a tela', 'A roleta em movimento na tela 4K puxa o toque. Sem promotor, sem abordagem.'],
             ['02', 'Cadastro relâmpago', 'Só nome e telefone, com validação por SMS. Sem fricção, sem desistência.'],
-            ['03', 'Marca a sua loja', 'Ele escolhe as lojas e categorias favoritas — e declara interesse na sua.'],
-            ['04', 'Gira a roleta', 'Roleta inteligente: quem marcou sua loja como favorita tem mais chance de ganhar nela.'],
-            ['05', 'QR + endereço', 'O prêmio chega com QR code e a rota até a sua porta. A retirada acontece dentro da loja.'],
+            ['03', 'Marca a sua loja', 'Ele escolhe as lojas favoritas — e declara interesse na sua.'],
+            ['04', 'Gira a roleta', 'Quem marcou sua loja como favorita tem mais chance de ganhar nela.'],
+            ['05', 'QR + endereço', 'O prêmio sai com QR code e a rota até a sua porta. A retirada é dentro da loja.'],
           ].map(([n, t, d], i) => (
             <Reveal key={n} delay={0.1 + i * 0.08}>
               <div className={tw`h-full ${cardCls} p-5`}>
-                <div className={tw`font-display text-4xl font-bold text-violet-bright`}>{n}</div>
-                <h3 className={tw`mt-3 font-bold text-ink`}>{t}</h3>
-                <p className={tw`mt-2 text-sm leading-relaxed text-muted`}>{d}</p>
+                <div className={tw`font-anton text-4xl text-mb-blue`}>{n}</div>
+                <h3 className={tw`mt-3 font-extrabold text-mb-black`}>{t}</h3>
+                <p className={tw`mt-2 text-sm leading-relaxed text-mb-gray`}>{d}</p>
               </div>
             </Reveal>
           ))}
@@ -139,10 +130,10 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
         </Reveal>
         <div className={tw`mt-10 grid gap-4 sm:grid-cols-2`}>
           {[
-            ['01 — Lead', 'Lead qualificado, não impressão genérica', 'Cada lead chega com nome, contato e a confirmação de interesse declarado na sua loja antes do giro.'],
-            ['02 — Presença', 'Presença física garantida', 'O prêmio só é retirado dentro da loja, com leitura do QR — a interação vira pisada na sua porta.'],
+            ['01 — LEAD', 'Lead qualificado, não impressão genérica', 'Cada lead chega com nome, contato e a confirmação de interesse declarado na sua loja antes do giro.'],
+            ['02 — PRESENÇA', 'Presença física garantida', 'O prêmio só é retirado dentro da loja, com leitura do QR — a interação vira pisada na sua porta.'],
             ['03 — ROI', 'Mensuração real, ponta a ponta', 'Funil completo: interações → cadastros → leads da sua loja → retiradas → vendas atribuídas.'],
-            ['04 — Perfil', 'Conexão direta com perfil de interesse', 'Acesso ao perfil de quem escolheu sua loja como favorita — base reutilizável nas suas campanhas.'],
+            ['04 — PERFIL', 'Conexão direta com perfil de interesse', 'Acesso ao perfil de quem escolheu sua loja como favorita — base reutilizável nas suas campanhas.'],
           ].map(([tag, title, desc], i) => (
             <Reveal key={tag} delay={0.1 + i * 0.08}>
               <InfoCard tag={tag} title={title} desc={desc} />
@@ -159,27 +150,28 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
               <div className={tw`${kickerCls} mb-4`}>O diferencial</div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className={tw`font-display text-5xl font-bold leading-tight tracking-tight text-ink`}>
+              <h2 className={tw`font-anton text-5xl uppercase leading-[1.0] text-mb-black sm:text-6xl`}>
                 Roleta
                 <br />
-                Inteligente.
+                <span className={tw`text-mb-blue`}>inteligente.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className={tw`mt-6 max-w-md text-lg leading-relaxed text-muted`}>
+              <p className={tw`mt-6 max-w-md text-lg leading-relaxed text-mb-surface`}>
                 A roleta não é aleatória. Ela pondera a probabilidade de cada setor pelo interesse do
-                cliente — as lojas favoritas dele — e pelas metas de tráfego pactuadas com cada lojista.
+                cliente — as lojas favoritas dele — e pelas metas de tráfego pactuadas com cada
+                lojista.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
               <ul className={tw`mt-7 flex flex-col gap-4`}>
                 {[
-                  ['#8b6dff', 'Probabilidade dinâmica por loja e categoria'],
-                  ['#8b6dff', 'Você define o prêmio, com limites e budget configuráveis'],
-                  ['#e9b96e', 'Lead entregue a você já com o perfil de interesse'],
-                ].map(([c, t]) => (
-                  <li key={t} className={tw`flex items-center gap-3 font-medium text-ink`}>
-                    <span className={tw`h-3 w-3 flex-none rounded`} style={{ background: c }} /> {t}
+                  'Probabilidade dinâmica por loja e categoria',
+                  'Você define o prêmio, com limites e budget configuráveis',
+                  'Lead entregue a você já com o perfil de interesse',
+                ].map((t) => (
+                  <li key={t} className={tw`flex items-center gap-3 font-semibold text-mb-black`}>
+                    <span className={tw`h-2.5 w-2.5 flex-none rounded-sm bg-mb-blue`} /> {t}
                   </li>
                 ))}
               </ul>
@@ -187,16 +179,14 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
           </div>
           <Reveal delay={0.2}>
             <div className={tw`text-center`}>
-              <div className={tw`mx-auto`} style={{ maxWidth: 340 }}>
-                <Wheel rotation={0} favoriteId={1} spinning={false} />
-              </div>
-              <div className={tw`mt-4 flex flex-wrap justify-center gap-6 text-sm text-muted`}>
+              <WheelClean size={340} />
+              <div className={tw`mt-6 flex flex-wrap justify-center gap-6 text-sm font-semibold text-mb-surface`}>
                 <span className={tw`inline-flex items-center gap-2`}>
-                  <i className={tw`h-3 w-3 rounded`} style={{ background: '#e9b96e' }} />
+                  <i className={tw`h-3 w-3 rounded-sm bg-mb-blue`} />
                   Sua loja em destaque (favorita)
                 </span>
                 <span className={tw`inline-flex items-center gap-2`}>
-                  <i className={tw`h-3 w-3 rounded`} style={{ background: '#5b3fd6' }} />
+                  <i className={tw`h-3 w-3 rounded-sm`} style={{ background: '#DBDFE7' }} />
                   Catálogo geral
                 </span>
               </div>
@@ -222,57 +212,54 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
             <Reveal key={l} delay={0.1 + i * 0.1}>
               <div className={tw`h-full ${cardCls} p-6`}>
                 <span
-                  className={tw`flex h-9 w-9 items-center justify-center rounded-lg font-display font-bold text-bg`}
-                  style={{ background: i === 2 ? '#e9b96e' : '#8b6dff' }}
+                  className={tw`flex h-9 w-9 items-center justify-center rounded-lg font-anton text-lg text-white ${
+                    i === 2 ? 'bg-mb-blue' : 'bg-mb-black'
+                  }`}
                 >
                   {l}
                 </span>
-                <h3 className={tw`mt-4 text-lg font-bold text-ink`}>{t}</h3>
-                <p className={tw`mt-2 text-sm leading-relaxed text-muted`}>{d}</p>
+                <h3 className={tw`mt-4 text-lg font-extrabold text-mb-black`}>{t}</h3>
+                <p className={tw`mt-2 text-sm leading-relaxed text-mb-gray`}>{d}</p>
               </div>
             </Reveal>
           ))}
         </div>
         <Reveal delay={0.3}>
-          <div className={tw`mt-6 flex items-start gap-3 rounded-2xl border border-violet/30 bg-violet/[.05] px-6 py-4 text-sm leading-relaxed text-muted sm:items-center`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a98bff" strokeWidth="2" className={tw`mt-0.5 flex-none sm:mt-0`}>
+          <div className={tw`mt-6 flex items-start gap-3 rounded-2xl border border-mb-blue/25 bg-mb-blue/[.05] px-6 py-4 text-sm leading-relaxed text-mb-surface sm:items-center`}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B5CFF" strokeWidth="2" className={tw`mt-0.5 flex-none sm:mt-0`}>
               <circle cx="12" cy="12" r="10" />
               <path d="m8 12 3 3 5-6" />
             </svg>
             <span>
-              <strong className={tw`text-ink`}>LGPD:</strong> o cadastro é feito com consentimento explícito, e você
-              só recebe o lead de quem escolheu a sua loja como favorita.
+              <strong className={tw`text-mb-black`}>LGPD:</strong> o cadastro é feito com consentimento explícito, e
+              você só recebe o lead de quem escolheu a sua loja como favorita.
             </span>
           </div>
         </Reveal>
       </section>
 
-      {/* CTA FINAL */}
-      <section className={tw`${section} pb-20 text-center`}>
-        <Reveal>
-          <div className={tw`font-display text-xs uppercase tracking-[0.3em] text-gold`}>Próximo passo</div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <h2
-            className={tw`mx-auto mt-5 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl`}
-            style={{
-              background: 'linear-gradient(120deg,#fff 30%,#a98bff)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              color: 'transparent',
-            }}
-          >
-            Veja como isso chega para você, na prática.
-          </h2>
-        </Reveal>
-        <Reveal delay={0.25}>
-          <div className={tw`mt-9 flex flex-wrap justify-center gap-3`}>
-            <CtaButton onClick={onExemplo}>Ver exemplo na prática →</CtaButton>
-            <CtaButton variant="ghost" onClick={onDemo}>
-              ▶ Testar a roleta
-            </CtaButton>
-          </div>
-        </Reveal>
+      {/* CTA FINAL — faixa preta */}
+      <section className={tw`bg-mb-black`}>
+        <div className={tw`mx-auto w-full max-w-6xl px-5 py-20 text-center sm:px-8 sm:py-28`}>
+          <Reveal>
+            <div className={tw`font-mono text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-mb-sky`}>
+              Próximo passo
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className={tw`mx-auto mt-6 max-w-3xl font-anton text-4xl uppercase leading-[1.02] text-white sm:text-6xl`}>
+              Veja como isso chega <span className={tw`text-mb-blue`}>para você</span>, na prática.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <div className={tw`mt-10 flex flex-wrap justify-center gap-3`}>
+              <CtaButton onClick={onExemplo}>Ver exemplo na prática →</CtaButton>
+              <CtaButton variant="ghost-dark" onClick={onDemo}>
+                ▶ Testar a roleta
+              </CtaButton>
+            </div>
+          </Reveal>
+        </div>
       </section>
     </LojistaShell>
   )

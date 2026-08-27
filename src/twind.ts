@@ -10,6 +10,9 @@ install({
       fontFamily: {
         sans: ['Manrope', 'system-ui', 'sans-serif'],
         display: ['"Space Grotesk"', 'sans-serif'],
+        // Identidade Metabuy (manual de marca v1): Anton p/ display, Archivo p/ texto.
+        anton: ['Anton', 'Impact', 'sans-serif'],
+        archivo: ['Archivo', 'system-ui', 'sans-serif'],
       },
       colors: {
         ink: '#f4f2fb',
@@ -23,6 +26,15 @@ install({
         gold: '#e9b96e',
         bg: '#08060f',
         bg2: '#0e0a1c',
+        // Paleta Metabuy (manual de marca v1) — azul é o ÚNICO destaque; resto P&B.
+        mb: {
+          blue: '#1B5CFF',
+          sky: '#7FB0FF',
+          black: '#0B0C0F',
+          surface: '#1E222C',
+          gray: '#8B93A5',
+          ice: '#F4F4F1',
+        },
       },
       keyframes: {
         float: {
