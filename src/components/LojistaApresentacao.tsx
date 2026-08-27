@@ -101,7 +101,9 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
           </Reveal>
           <Reveal delay={0.1}>
             <p className={tw`mx-auto font-anton text-4xl uppercase leading-[1.05] text-mb-black sm:text-6xl`}>
-              Sua marca na frente de quem <span className={tw`text-mb-blue`}>já veio comprar.</span>
+              Sua marca no caminho
+              <br />
+              de quem <span className={tw`text-mb-blue`}>já veio comprar.</span>
             </p>
           </Reveal>
           <Reveal delay={0.25}>
