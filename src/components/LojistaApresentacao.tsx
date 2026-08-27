@@ -93,6 +93,26 @@ export function LojistaApresentacao({ onApresentacao, onExemplo, onDemo }: Props
         </div>
       </section>
 
+      {/* SLOGAN */}
+      <section className={tw`border-y border-black/[.08] bg-white`}>
+        <div className={tw`mx-auto w-full max-w-5xl px-5 py-16 text-center sm:px-8 sm:py-24`}>
+          <Reveal>
+            <div className={tw`${kickerCls} mb-6`}>Por que funciona</div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className={tw`mx-auto font-anton text-4xl uppercase leading-[1.05] text-mb-black sm:text-6xl`}>
+              Sua marca na frente de quem <span className={tw`text-mb-blue`}>já veio comprar.</span>
+            </p>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <p className={tw`mx-auto mt-6 max-w-xl text-lg leading-relaxed text-mb-surface`}>
+              Ninguém encosta no totem por acaso: quem gira a roleta já está no shopping, a poucos
+              metros da sua porta.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* COMO FUNCIONA */}
       <section className={tw`${section}`}>
         <Reveal>
