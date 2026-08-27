@@ -277,46 +277,6 @@ export function LojistaExemplo({ onApresentacao, onExemplo, onDemo }: Props) {
         </div>
       </section>
 
-      {/* FUNIL */}
-      <section className={tw`${section}`}>
-        <Reveal>
-          <div className={tw`${kickerCls} mb-5`}>Mensuração</div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <h2 className={tw`${headingCls} max-w-3xl`}>Um funil que você acompanha de ponta a ponta.</h2>
-        </Reveal>
-        <Reveal delay={0.2}>
-          <div className={tw`mt-10 grid gap-3 sm:grid-cols-5`}>
-            {[
-              ['Interações', 'Toques no totem'],
-              ['Cadastros', 'Validados por SMS'],
-              ['Leads da sua loja', 'Interesse declarado'],
-              ['Clientes na loja', 'QR lido no caixa'],
-              ['Vendas atribuídas', 'Fechadas com o vale'],
-            ].map(([t, d], i) => {
-              const isLast = i === 4
-              return (
-                <div
-                  key={t}
-                  className={tw`relative rounded-2xl p-5 text-center ${
-                    isLast ? 'bg-mb-black' : `${cardCls}`
-                  }`}
-                >
-                  <div className={tw`font-anton text-2xl ${isLast ? 'text-mb-sky' : 'text-mb-blue'}`}>{`0${i + 1}`}</div>
-                  <h3 className={tw`mt-2 font-extrabold leading-tight ${isLast ? 'text-white' : 'text-mb-black'}`}>{t}</h3>
-                  <p className={tw`mt-1.5 text-xs ${isLast ? 'text-mb-gray' : 'text-mb-gray'}`}>{d}</p>
-                  {!isLast && (
-                    <span className={tw`absolute right-[-13px] top-1/2 z-10 hidden -translate-y-1/2 font-bold text-mb-gray sm:block`}>
-                      →
-                    </span>
-                  )}
-                </div>
-              )
-            })}
-          </div>
-        </Reveal>
-      </section>
-
       {/* CTA FINAL — faixa preta */}
       <section className={tw`bg-mb-black`}>
         <div className={tw`mx-auto w-full max-w-6xl px-5 py-20 text-center sm:px-8 sm:py-28`}>
