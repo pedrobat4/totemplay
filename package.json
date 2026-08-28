@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:lojista": "VITE_BUILD_TARGET=lojista vite",
     "build": "tsc -b && vite build",
+    "build:lojista": "tsc -b && VITE_BUILD_TARGET=lojista vite build --outDir dist-lojista && printf '/* /index.html 200' > dist-lojista/_redirects",
     "preview": "vite preview"
   },
   "dependencies": {
